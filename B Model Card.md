@@ -9,7 +9,7 @@ repo: https://github.com/BenTheBacker/NLU---Project
 
 ---
 
-# Model Card for m81976bb-BARROW_PUT_UR_USERNAME-ED
+# Model Card for m81976bb-v36373bb-ED-TaskB
 
 <!-- Provide a quick summary of what the model is/does. -->
 
@@ -80,7 +80,8 @@ This model was trained on approximately 24.8k claim-evidence pairs, plus augment
 <!-- This section provides information about how roughly how long it takes to train the model and the size of the resulting model. -->
 
 
-      - overall training time: ~8-10 minutes on a Kaggle P100 GPU
+      - overall training time (per final run): ~8-10 minutes on a Kaggle P100 GPU
+      - total training time for all Hyperopt trials: ~2h 35m 18s
       - total epochs: 4
       - model size: ~270MB
     
@@ -153,8 +154,10 @@ We used the official ED dev set (~6k samples) for evaluation.
 
 <!-- This section is meant to convey both technical and sociotechnical limitations. -->
 
-Data augmentation may introduce synonyms that alter sentence semantics in subtle ways.
-      Users should verify outputs for critical applications.
+Data augmentation may introduce synonyms that alter sentence context. 
+      The model performance may degrade on domain-specific language 
+      or out-of-vocabulary terms. Mitigation strategies may involve 
+      domain adaptation or further data collection.
 
 ## Additional Information
 

@@ -9,7 +9,7 @@ repo: https://github.com/BenTheBacker/NLU---Project
 
 ---
 
-# Model Card for v36373bb-otheruser-task_C
+# Model Card for m81976bb-v36373bb-ED-TaskC
 
 <!-- Provide a quick summary of what the model is/does. -->
 
@@ -30,7 +30,7 @@ Our approach uses **microsoft/deberta-v3-base** as the base model,
       (focal loss vs. label smoothing). This helps address potential data imbalance 
       and improves generalization.
 
-- **Developed by:** Firstname Lastname and Firstname2 Lastname2
+- **Developed by:** Ben Baker and Ben Barrow
 - **Language(s):** English
 - **Model type:** Supervised
 - **Model architecture:** DeBERTa-v3 Base, fine-tuned with optional focal loss.
@@ -49,7 +49,7 @@ Our approach uses **microsoft/deberta-v3-base** as the base model,
 
 <!-- This is a short stub of information on the training data that was used, and documentation related to data pre-processing or additional filtering (if applicable). -->
 
-Approximately 10K claim-evidence pairs, augmented by ~15% with synonym replacement.
+This model was trained on approximately 24.8k claim-evidence pairs, plus augmented samples.
 
 ### Training Procedure
 
@@ -91,7 +91,7 @@ Approximately 10K claim-evidence pairs, augmented by ~15% with synonym replaceme
 
 <!-- This should describe any evaluation data used (e.g., the development/validation set provided). -->
 
-Dev set of ~6k claim-evidence pairs labeled 0 or 1; test set withheld for final scoring.
+We used the official ED dev set (~6k samples) for evaluation.
 
 #### Metrics
 
@@ -104,6 +104,7 @@ Dev set of ~6k claim-evidence pairs labeled 0 or 1; test set withheld for final 
     
 
 ### Results
+
 
 
 **Final Model Results** (Dev Set):
@@ -165,5 +166,5 @@ Data augmentation may introduce synonyms that alter sentence context.
 
 <!-- Any other information that would be useful for other people to know. -->
 
-The final hyperparams used label smoothing=0.000111, gamma=4.5 (for focal loss if enabled), 
-      and a learning rate ~2.38e-05, resulting in strong performance after just 2 epochs.
+All hyperparameters were chosen via TPE (Tree-structured Parzen Estimator) 
+      with a maximum of 30 evaluations.
