@@ -1,0 +1,5 @@
+venv/
+data/
+.ipynb_checkpoints/
+enhanced-bilstm-ed-checkpoints
+final-enhanced-bilstm-model
