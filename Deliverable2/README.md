@@ -11,18 +11,23 @@ A concise end-to-end workflow for detecting relevant evidence in text using [DeB
 - transformers
 - hyperopt
 - accelerate
+
 Install everything via:
 > pip install -r requirements.txt
 
 ## Data and Attribution
-- Place your train.csv, dev.csv, and test.csv in the data/ folder (or update paths in the notebook).
+Place your train.csv, dev.csv, and test.csv in the data/ folder (or update paths in the notebook).
+**Note:**
 - train.csv / dev.csv must have claim, evidence, label columns.
 - test.csv must have claim, evidence.
+
+### Attributions:
 - [Glove Data Source](https://www.kaggle.com/datasets/thanakomsn/glove6b300dtxt)
 
 ## Usage
 Install dependencies:
 `pip install -r requirements.txt`
+
 Open and run the notebook:
 - Make changes to global variables to update paths and hyperparameter search space if required
 - It loads data, performs optional augmentation, hyperparameter tuning, then trains a final model.
@@ -33,4 +38,5 @@ To load the saved model and run on new data (e.g. test.csv):
 1. Skip the training cells in the notebook.
 2. Load the model state dict from best_deberta_model.pt.
 3. Generate predictions.
+
 The notebook saves these predictions as a CSV with a single "prediction" column.
