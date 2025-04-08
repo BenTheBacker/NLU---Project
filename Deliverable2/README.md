@@ -26,7 +26,7 @@ Place your train.csv, dev.csv, and test.csv in the data/ folder (or update paths
 
 ## Usage
 Install dependencies:
-`pip install -r requirements.txt`
+> pip install -r requirements.txt
 
 Open and run the notebook:
 - Make changes to global variables to update paths and hyperparameter search space if required
