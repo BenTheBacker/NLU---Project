@@ -3,3 +3,5 @@ data/
 .ipynb_checkpoints/
 enhanced-bilstm-ed-checkpoints
 final-enhanced-bilstm-model
+final-sota-model
+sota-ed-checkpoints
