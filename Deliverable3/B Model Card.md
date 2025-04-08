@@ -13,8 +13,9 @@ repo: https://github.com/BenTheBacker/NLU---Project
 
 <!-- Provide a quick summary of what the model is/does. -->
 
-This classification model determines whether a given claim 
-      supports or refutes a piece of evidence, following the ED track specification.
+This classification model was built for "Task C",
+      where the system determines whether a given claim is supported by
+      a piece of evidence (0) or not (1).
 
 
 ## Model Details
@@ -23,8 +24,8 @@ This classification model determines whether a given claim
 
 <!-- Provide a longer summary of what this model is. -->
 
-Our approach uses a custom BiLSTM architecture, with optional attention 
-      and GloVe embeddings. We fine-tuned hyperparameters using Hyperopt 
+Our approach uses a custom BiLSTM architecture, with optional attention
+      and GloVe embeddings. We fine-tuned hyperparameters using Hyperopt
       (TPE algorithm).
 
 - **Developed by:** Ben Baker and Ben Barrow
@@ -37,8 +38,8 @@ Our approach uses a custom BiLSTM architecture, with optional attention
 
 <!-- Provide links where applicable. -->
 
-- **Repository:** [More Information Needed]
-- **Paper or documentation:** [More Information Needed]
+- **Repository:** N/A
+- **Paper or documentation:** N/A
 
 ## Training Details
 
@@ -56,13 +57,13 @@ This model was trained on approximately 24.8k claim-evidence pairs, plus augment
 
 <!-- This is a summary of the values of hyperparameters used in training the model. -->
 
- 
+
       - learning_rate: searched via hyperopt (log-uniform 1e-5 to 5e-4)
       - batch_size: 4, 8, 16
       - epochs: 2, 3, 4
       - label_smoothing: 0.0 to 0.2
       - gamma (Focal Loss): 1.0 to 5.0
-    
+
 
 ## Best Hyperparameters
 
@@ -84,7 +85,7 @@ This model was trained on approximately 24.8k claim-evidence pairs, plus augment
       - total training time for all Hyperopt trials: ~3h 12m 47s
       - total epochs: 3
       - model size: ~270MB
-    
+
 
 ## Evaluation
 
@@ -106,16 +107,16 @@ We used the official ED dev set (~6k samples) for evaluation.
       - F1 (weighted)
       - Accuracy
       - Classification report (Precision/Recall/F1)
-    
+
 
 ### Results
 
-**Final Dev Results**  
-- **Loss**: 0.208608  
-- **F1 (weighted)**: ~0.8235  
-- **Accuracy**: ~0.8272  
+**Final Dev Results**
+- **Loss**: 0.208608
+- **F1 (weighted)**: ~0.8235
+- **Accuracy**: ~0.8272
 
-**Epoch-by-Epoch Performance (Dev)**  
+**Epoch-by-Epoch Performance (Dev)**
 
 | Epoch | Training Loss | Val Loss  | F1      | Accuracy  |
 |-------|--------------:|----------:|--------:|----------:|
@@ -123,10 +124,10 @@ We used the official ED dev set (~6k samples) for evaluation.
 |   2   | 0.173900      | 0.196101  | 0.819288| 0.819271  |
 |   3   | 0.139000      | 0.208608  | 0.823521| 0.827202  |
 
-**Classification Report**  
-- Class 0 => precision=0.8634, recall=0.9041, f1=0.8833  
-- Class 1 => precision=0.7142, recall=0.6262, f1=0.6673  
-- Accuracy => 0.8272  
+**Classification Report**
+- Class 0 => precision=0.8634, recall=0.9041, f1=0.8833
+- Class 1 => precision=0.7142, recall=0.6262, f1=0.6673
+- Accuracy => 0.8272
 - Weighted Avg F1 => 0.8235
 
 
@@ -138,7 +139,7 @@ We used the official ED dev set (~6k samples) for evaluation.
       - GPU recommended (trained on a Kaggle P100)
       - ~2GB storage for GloVe embeddings
       - ~16GB RAM
-    
+
 
 ### Software
 
@@ -147,20 +148,20 @@ We used the official ED dev set (~6k samples) for evaluation.
       - PyTorch 1.x
       - NLTK for data augmentation
       - Hyperopt for hyperparameter tuning
-    
+
 
 ## Bias, Risks, and Limitations
 
 <!-- This section is meant to convey both technical and sociotechnical limitations. -->
 
-Data augmentation may introduce synonyms that alter sentence context. 
-      The model performance may degrade on domain-specific language 
-      or out-of-vocabulary terms. Mitigation strategies may involve 
+Data augmentation may introduce synonyms that alter sentence context.
+      The model performance may degrade on domain-specific language
+      or out-of-vocabulary terms. Mitigation strategies may involve
       domain adaptation or further data collection.
 
 ## Additional Information
 
 <!-- Any other information that would be useful for other people to know. -->
 
-All hyperparameters were chosen via TPE (Tree-structured Parzen Estimator) 
+All hyperparameters were chosen via TPE (Tree-structured Parzen Estimator)
       with a maximum of 30 evaluations.
