@@ -1,5 +1,5 @@
 # Evidence Detection with DeBERTa
-A concise end-to-end workflow for detecting relevant evidence in text using [DeBERTa v3](https://huggingface.co/microsoft/deberta-v3-base). It includes data loading, synonym-based augmentation, hyperparameter tuning with Hyperopt, and model inference.
+A concise end-to-end workflow for detecting relevant evidence in text using [DeBERTa v3](https://huggingface.co/microsoft/deberta-v3-base) or BiLSTM. It includes data loading, synonym-based augmentation, hyperparameter tuning with Hyperopt, and model inference.
 
 ## Requirements Overview:
 - Python 3.10+

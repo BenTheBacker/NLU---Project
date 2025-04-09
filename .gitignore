@@ -7,3 +7,4 @@ final-sota-model
 sota-ed-checkpoints
 
 *.pt
+SkunkWorks/
