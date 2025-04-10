@@ -33,6 +33,11 @@ Open and run the notebook:
 - It loads data, performs optional augmentation, hyperparameter tuning, then trains a final model.
 - A file (e.g., best_deberta_model.pt) is saved with the best weights.
 
+### Demo Usage:
+Open and run the DEMO notebook (task-X-demo.ipynb):
+- Do not change anything
+- Ensure that best_deberta_model.pt is present
+
 ## Inference
 To load the saved model and run on new data (e.g. test.csv):
 1. Skip the training cells in the notebook.
@@ -40,3 +45,6 @@ To load the saved model and run on new data (e.g. test.csv):
 3. Generate predictions.
 
 The notebook saves these predictions as a CSV with a single "prediction" column.
+
+## Models:
+Models are kept in the following [google drive](https://drive.google.com/file/d/1HOjRB5QsfDlqsNtufG-03oD7lqVrS_Ys/view?usp=drive_link) folder as they are too large to submit, as per the requirements specified in the project guidelines.
