@@ -47,4 +47,4 @@ To load the saved model and run on new data (e.g. test.csv):
 The notebook saves these predictions as a CSV with a single "prediction" column.
 
 ## Models:
-Models are kept in the following [google drive](https://drive.google.com/file/d/1HOjRB5QsfDlqsNtufG-03oD7lqVrS_Ys/view?usp=drive_link) folder as they are too large to submit, as per the requirements specified in the project guidelines.
+Models are kept in the following [google drive](https://drive.google.com/file/d/1GxGV_W0MWFhBk0Sxts1QGg5YtIIWqt-o/view?usp=sharing) folder as they are too large to submit, as per the requirements specified in the project guidelines.
